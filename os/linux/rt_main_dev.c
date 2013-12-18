@@ -117,7 +117,7 @@ int MainVirtualIF_close(IN struct net_device *net_dev)
 
 	RTMPInfClose(pAd);
 
-
+	printk("MainVirtualIF_close \n");
 #ifdef IFUP_IN_PROBE
 #else
 	VIRTUAL_IF_DOWN(pAd);
@@ -208,7 +208,7 @@ int rt28xx_close(VOID *dev)
 /*	UINT32			i = 0; */
 	GET_PAD_FROM_NET_DEV(pAd, net_dev);	
 
-	DBGPRINT(RT_DEBUG_TRACE, ("===> rt28xx_close\n"));
+	DBGPRINT(RT_DEBUG_ERROR, ("===> rt28xx_close\n"));
 
 	/* Sanity check for pAd */
 	if (pAd == NULL)
